@@ -8,7 +8,7 @@ jobs:
   test_and_build:
       runs-on: ubuntu-latest
       steps:
-      
+
         - name: Hacemos Checkuot del repo de Git
           uses: actions/checkout@v2
 
@@ -28,10 +28,10 @@ jobs:
           id: getVersion
 
         - name: Copy generated .war to staging  
-        run: mkdir staging && cp target/*.war staging
+          run: mkdir staging && cp target/*.war staging
 
         - name: Upload generated .war to Artifact 
-        uses: actions/upload-artifact@v3
-        with:
-          name: mvn-hello-world-${{ steps.getVersion.outputs.version }}.zip
-          path: staging   
+          uses: actions/upload-artifact@v3
+          with:
+            name: mvn-hello-world-${{ steps.getVersion.outputs.version }}.zip
+            path: staging
