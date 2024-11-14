@@ -2,7 +2,7 @@ name: Maven CI/CD
 
 on:
   push:
-    branches: [ Development ]
+    branches: [ main ]
 
 jobs:
   test_and_build:
@@ -16,7 +16,7 @@ jobs:
           uses: actions/setup-java@v1
           with:
             java-version: 8
-            
+
         - name: Test project with Maven
           run: mvn -B test
 
